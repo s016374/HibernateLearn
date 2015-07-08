@@ -1,0 +1,24 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!DOCTYPE hibernate-configuration PUBLIC
+        "-//Hibernate/Hibernate Configuration DTD//EN"
+        "http://www.hibernate.org/dtd/hibernate-configuration-3.0.dtd">
+<hibernate-configuration>
+    <session-factory>
+        <property name="hibernate.connection.url">jdbc:mysql://10.2.6.235:3306/autotest</property>
+        <property name="hibernate.connection.driver_class">com.mysql.jdbc.Driver</property>
+        <property name="connection.username">ztx</property>
+        <property name="connection.password">123456</property>
+
+        <property name="hibernate.dialect">org.hibernate.dialect.MySQL5InnoDBDialect</property>
+
+        <property name="hibernate.show_sql">true</property>
+        <property name="hibernate.format_sql">true</property>
+        <!-- DB schema will be updated if needed -->
+        <!-- <property name="hbm2ddl.auto">update</property> -->
+        <property name="hibernate.hbm2ddl.auto">update</property>
+
+        <mapping class="com.mysql.jdbc.HtmlelementEntity"/>
+        <mapping class="com.mysql.jdbc.TestcasedetailEntity"/>
+        <mapping class="com.ztx.qa.News"/>
+    </session-factory>
+</hibernate-configuration>
