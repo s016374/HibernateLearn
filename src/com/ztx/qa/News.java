@@ -22,7 +22,7 @@ public class News {
     private Date date;
 
     public News() {
-        //TODO
+
     }
 
     public News(String title, String author, Date date) {
