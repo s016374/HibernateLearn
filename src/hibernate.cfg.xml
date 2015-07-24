@@ -26,8 +26,17 @@
         <property name="c3p0.idle_test_period">2000</property>
         <property name="c3p0.max_statements">10</property>
 
+        <!-- fetch size -->
+        <property name="hibernate.jdbc.fetch_size">100</property>
+        <!-- batch size-->
+        <property name="hibernate.jdbc.batch_size">30</property>
+
         <mapping class="com.mysql.jdbc.HtmlelementEntity"/>
         <mapping class="com.mysql.jdbc.TestcasedetailEntity"/>
+
         <mapping class="com.ztx.qa.News"/>
+
+        <mapping class="com.many2one.Customer"/>
+        <mapping class="com.many2one.Order"/>
     </session-factory>
 </hibernate-configuration>
