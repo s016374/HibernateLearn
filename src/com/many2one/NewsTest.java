@@ -35,8 +35,23 @@ public class NewsTest {
         Customer customer = new Customer("Tom");
         Order order1 = new Order("Book", customer);
         Order order2 = new Order("Car", customer);
+        customer.getOrders().add(order1);
+        customer.getOrders().add(order2);
         session.save(customer);
         session.save(order1);
         session.save(order2);
+    }
+
+    @Test
+    public void testGet() {
+        Customer customer = (Customer) session.get(Customer.class, 1);
+        System.out.println(customer.getCustomerName());
+        System.out.println(customer.getOrders().getClass());
+    }
+
+    @Test
+    public void testUpdate() {
+        Customer customer = (Customer) session.get(Customer.class, 1);
+        customer.getOrders().iterator().next().setOrderName("Modify");
     }
 }
